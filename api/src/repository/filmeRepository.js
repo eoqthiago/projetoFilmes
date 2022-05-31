@@ -69,7 +69,7 @@ export async function buscaPorNome(nome) {
     FROM tb_filme
     WHERE nm_filme			like ? `;
 
-    const [resposta] = await con.query(comando, [nome])
+    const [resposta] = await con.query(comando, [ '%${nome}%' ])
     return resposta
 
 }
