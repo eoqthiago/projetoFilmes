@@ -1,0 +1,152 @@
+(1)
+/POST /USUARIO/LOGIN
+
+REQUEST BODY
+{
+    "email": " ",
+    "senha": " "
+}
+
+RESPONSE
+{
+    "id": 0,
+    "email": " ",
+    "nome": " "
+
+}
+
+(2)
+/POST  /FILME
+
+REQUEST  BODY
+{
+    "nome": " ",
+    "sinopse": " ",
+    "avaliacao": 0.0,
+    "lancamento": "2020-10-00",
+    "disponivel": true,
+    "usuario": 0
+
+}
+
+RESPONSE
+{
+    "id": 1,
+    "nome": " ",
+    "sinopse": " ",
+    "avaliacao": 0.0,
+    "lancamento": "2020-10-00",
+    "disponivel": true,
+    "usuario": 0
+
+
+
+}
+
+(2.1)
+/POST  /FILME
+
+REQUEST  (form)
+{
+
+    "imagem": "",
+
+
+}
+
+
+
+
+
+(3)
+
+/PUT /FILME/:ID
+
+
+REQUEST   BODY
+{
+
+    "nome": " ",
+    "sinopse": " ",
+    "avaliacao": 0.0,
+    "lancamento": "2020-10-00",
+    "disponivel": true,
+    "imagem": "",
+    "usuario": 0
+
+}
+
+RESPONSE
+{
+
+--
+
+}
+
+
+
+(4)
+/delete /FILME/:ID
+
+
+RESPONSE (204)
+{
+
+--
+
+}
+
+(5)
+/GET /FILME
+
+
+RESPONSE  
+[
+    {
+        "nome": " ",
+        "avaliacao": 0.0,
+        "lancamento": "2020-10-00",
+        "disponivel": true,
+        "usuario": 0
+    }
+]
+
+
+
+
+
+(6)
+
+/GET  /FILME/:NOME
+
+
+RESPONSE
+[
+    {
+        "nome": " ",
+        "avaliacao": 0.0,
+        "lancamento": "2020-10-00",
+        "disponivel": true,
+        "usuario": 0
+    }
+]
+
+
+(7)
+
+
+/GET /FILME/BUSCA?NOME=XX
+
+
+
+RESPONSE
+
+{
+    "nome": " ",
+    "sinopse": " ",
+    "avaliacao": 0.0,
+    "lancamento": "2020-10-00",
+    "disponivel": true,
+    "imagem": "",
+    "usuario": 0
+}
