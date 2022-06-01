@@ -8,9 +8,33 @@ const server = Router();
 const upload = multer({dest: 'storage/capaDeFilmes'});
 
 server.post('/filme', async (req, resp) => {
-    const filmeInserir = req.body
+    try {
+        const filmeInserir = req.body;
+
+        if  (!filmeInserir.nome)
+            throw new Error('Nome do Filme é Obrigatorio');
+
+        if  (!filmeInserir.sinopse)
+            throw new Error('Sinopse do Filme é Obrigatorio');
+
+        if  (filmeInserir.avaliacao == undefined || filmeInserir.avaliacao < 0)
+            throw new Error('Avaliação do Filme é Obrigatorio');
+
+        if  (!filmeInserir.lancamento)
+            throw new Error('Lançamento do Filme é Obrigatorio');
+
+        if  (!filmeInserir.usuario)
+            throw new Error('Usuario Não Logado!');
+    
+
     const resposta = await inserirFilme(filmeInserir);
     resp.send(resposta)
+    } catch (err) {
+        resp.status(400).send({
+            error:err.message
+        })
+    }
+
 })
 
 
