@@ -1,3 +1,4 @@
 # projetoFilmes
 
-Thiago Rodrigues e Juan
+Thiago e Juan
+Info b
